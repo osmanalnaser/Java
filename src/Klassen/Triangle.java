@@ -1,19 +1,19 @@
 package Klassen;
 
 public class Triangle {
-    // Eckpunkte des Dreiecks
+
     private Point A;
     private Point B;
     private Point C;
 
-    // Konstruktor
+
     public Triangle(Point A, Point B, Point C) {
         this.A = A;
         this.B = B;
         this.C = C;
     }
 
-    // Hilfsmethoden: Seitenlängen
+
     private double sideAB() {
         return A.distanceTo(B);
     }
@@ -26,13 +26,13 @@ public class Triangle {
         return C.distanceTo(A);
     }
 
-    // Hilfsmethode: Vergleich mit Toleranz (wegen Gleitkommaungenauigkeit)
+
     private boolean nearlyEqual(double a, double b) {
         double eps = 1e-9;
         return Math.abs(a - b) < eps;
     }
 
-    // gleichseitig: alle drei Seiten gleich lang
+
     public boolean isEquilateral() {
         double ab = sideAB();
         double bc = sideBC();
@@ -40,7 +40,7 @@ public class Triangle {
         return nearlyEqual(ab, bc) && nearlyEqual(bc, ca);
     }
 
-    // gleichschenklig: mindestens zwei Seiten gleich lang
+
     public boolean isIsosceles() {
         double ab = sideAB();
         double bc = sideBC();
@@ -48,13 +48,13 @@ public class Triangle {
         return nearlyEqual(ab, bc) || nearlyEqual(bc, ca) || nearlyEqual(ca, ab);
     }
 
-    // Hilfsmethode: prüft auf spitz/recht/stumpfwinklig anhand der Längensätze
+
     private int angleType() {
         double ab = sideAB();
         double bc = sideBC();
         double ca = sideCA();
 
-        // größte Seite finden (gegenüber größtem Winkel)
+
         double[] sides = {ab, bc, ca};
         java.util.Arrays.sort(sides);
         double a = sides[0];

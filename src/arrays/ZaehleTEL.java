@@ -18,7 +18,7 @@ public class ZaehleTEL {
         int countL = 0;
 
         for (char c : zeichen) {
-            switch (Character.toLowerCase(c)) { // alles klein vergleichen
+            switch (Character.toLowerCase(c)) {
                 case 't':
                     countT++;
                     break;

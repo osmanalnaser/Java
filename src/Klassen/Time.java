@@ -5,7 +5,7 @@ public class Time {
     private int minutes; // 0-59
     private int seconds; // 0-59
 
-    // --- Konstruktoren ---
+
     public Time() {
         this(0, 0, 0);
     }
@@ -22,7 +22,7 @@ public class Time {
         setTime(hours, minutes, seconds);
     }
 
-    // --- Hilfsmethode zur Initialisierung mit Korrektur ---
+
     private void setTime(int h, int m, int s) {
         if (h < 0 || h > 23) h = 0;
         if (m < 0 || m > 59) m = 0;
@@ -33,7 +33,7 @@ public class Time {
         this.seconds = s;
     }
 
-    // --- Getter ---
+
     public int getHours() {
         return hours;
     }
@@ -46,19 +46,19 @@ public class Time {
         return seconds;
     }
 
-    // --- clone (Kopie) ---
+
     public Time clone() {
         return new Time(this.hours, this.minutes, this.seconds);
     }
 
-    // --- Vergleich ---
+
     public boolean isEqualTo(Time other) {
         return this.hours == other.hours &&
                 this.minutes == other.minutes &&
                 this.seconds == other.seconds;
     }
 
-    // --- add (Zeit addieren) ---
+
     public void add(Time other) {
         this.seconds += other.seconds;
         this.minutes += other.minutes + this.seconds / 60;
@@ -69,7 +69,7 @@ public class Time {
         this.hours %= 24;
     }
 
-    // --- tick: eine Sekunde vor ---
+
     public void tick() {
         this.seconds++;
         if (this.seconds == 60) {
@@ -82,7 +82,7 @@ public class Time {
         }
     }
 
-    // --- Differenz zwischen zwei Uhrzeiten ---
+
     public Time differenceTo(Time other) {
         int thisTotal = this.hours * 3600 + this.minutes * 60 + this.seconds;
         int otherTotal = other.hours * 3600 + other.minutes * 60 + other.seconds;
@@ -100,7 +100,7 @@ public class Time {
         return new Time(h, m, s);
     }
 
-    // --- Ausgabe ---
+
     @Override
     public String toString() {
         return String.format("Time(hours: %d, minutes: %d, seconds: %d)",

@@ -6,7 +6,7 @@ public class ReverseArray {
         int[] original = {1, 2, 3, 4, 5};
         int[] reversed = reverse(original);
 
-        // Ausgabe zum Testen
+
         System.out.print("Original: ");
         printArray(original);
         System.out.print("Umgekehrt: ");

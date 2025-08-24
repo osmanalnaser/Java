@@ -7,10 +7,10 @@ public class IsSortedArray {
         int[] unsorted = {3, 1, 4, 2};
         int[] empty = {};
 
-        System.out.println(isSorted(sorted));   // true
-        System.out.println(isSorted(unsorted)); // false
-        System.out.println(isSorted(empty));    // true (leeres Array gilt als sortiert)
-        System.out.println(isSorted(null));     // false
+        System.out.println(isSorted(sorted));
+        System.out.println(isSorted(unsorted));
+        System.out.println(isSorted(empty));
+        System.out.println(isSorted(null));
     }
 
     public static boolean isSorted(int[] a) {
@@ -20,7 +20,7 @@ public class IsSortedArray {
 
         for (int i = 0; i < a.length - 1; i++) {
             if (a[i] > a[i + 1]) {
-                return false; // unsortiert gefunden
+                return false;
             }
         }
         return true;
